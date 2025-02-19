@@ -1,0 +1,11 @@
+one:
+  title: "Book One"
+  author: "Author One"
+  published_year: 2020
+  status: "available"
+
+two:
+  title: "Book Two"
+  author: "Author Two"
+  published_year: 2021
+  status: "borrowed"
