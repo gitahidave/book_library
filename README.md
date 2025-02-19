@@ -6,5 +6,5 @@ This is a basic book lending library application built with Ruby on Rails (versi
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/yourusername/book_library.git
+   git clone https://github.com/gitahidave/book_library.git
    cd book_library
