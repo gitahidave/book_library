@@ -1,0 +1,32 @@
+<div>
+  <h1>Borrowing History for <%= @borrower_name %></h1>
+  
+  <% if @borrowings.any? %>
+    <table>
+      <thead>
+        <tr>
+          <th>Book Title</th>
+          <th>Borrowed At</th>
+          <th>Returned At</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @borrowings.each do |borrowing| %>
+          <tr>
+            <td><%= link_to borrowing.book.title, borrowing.book %></td>
+            <td><%= borrowing.borrowed_at.strftime("%B %d, %Y") %></td>
+            <td><%= borrowing.returned_at&.strftime("%B %d, %Y") || "Not returned yet" %></td>
+            <td><%= borrowing.returned_at.present? ? "Returned" : "Active" %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  <% else %>
+    <p>No borrowing history found for this borrower.</p>
+  <% end %>
+  
+  <div>
+    <%= link_to "Back to books", books_path %>
+  </div>
+</div>
